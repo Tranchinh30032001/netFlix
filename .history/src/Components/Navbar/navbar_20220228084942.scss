@@ -1,0 +1,38 @@
+.container {
+	padding: 0 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.left {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		width: 18rem;
+		height: 4rem;
+		margin-right: 4rem;
+	}
+	.nav-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		li {
+			margin-right: 2rem;
+		}
+		a {
+			font-size: 1.6rem;
+		}
+	}
+}
+.right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 100%;
+		object-fit: cover;
+	}
+}

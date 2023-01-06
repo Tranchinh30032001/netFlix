@@ -1,0 +1,81 @@
+import React, { createContext, useState } from "react";
+import {
+	Link as RouterLink,
+	useNavigate,
+	useSearchParams,
+} from "react-router-dom";
+import * as SWITCH from "../../constants/routes";
+import {
+	Background,
+	Navbar,
+	Logo,
+	ButtonLink,
+	Search,
+	User,
+	Right,
+} from "./styles/header";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+
+function Header({ children, bg, ...restProps }) {
+	return (
+		<Background bg={bg} {...restProps}>
+			{children}
+		</Background>
+	);
+}
+
+Header.Navbar = ({ children, ...restProps }) => {
+	return <Navbar>{children}</Navbar>;
+};
+Header.Logo = ({ to, ...restProps }) => {
+	return (
+		<RouterLink to={SWITCH.Home}>
+			<Logo to={to} {...restProps} />
+		</RouterLink>
+	);
+};
+Header.ButtonLink = ({ children, link, ...restProps }) => {
+	return <ButtonLink to={link}>{children}</ButtonLink>;
+};
+Header.Search = function HeaderSearch({ children, Icon }) {
+	const [search, setSearch] = useState(false);
+	const handleClick = () => {
+		setSearch(!search);
+	};
+	return (
+		<Search bg={search}>
+			{search && <input type="text" placeholder="Search ..." />}
+			<Icon
+				onClick={handleClick}
+				className={search ? "icon-search active" : "icon-search"}
+			/>
+		</Search>
+	);
+};
+Header.User = function HeaderUser({ photoUrl, Icon }) {
+	const [active, setActive] = useState(false);
+	const navigate = useNavigate();
+	const handleClick = () => {
+		console.log("actice");
+		setActive(!active);
+	};
+	const handleLogout = () => {
+		signOut(auth).then(() => {});
+	};
+	return (
+		<User onClick={handleClick}>
+			<img src={photoUrl} alt="" />
+			<Icon className="icon-down" />
+			{active && (
+				<div onClick={handleLogout} className="logout">
+					<p>Logout</p>
+				</div>
+			)}
+		</User>
+	);
+};
+Header.Right = ({ children }) => {
+	return <Right>{children}</Right>;
+};
+export default Header;

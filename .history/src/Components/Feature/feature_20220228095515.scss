@@ -1,0 +1,17 @@
+.feature {
+	position: absolute;
+	top: 20%;
+	width: 60rem;
+	height: 30rem;
+	text-align: left;
+	img {
+		object-fit: cover;
+		width: 20rem;
+		height: 3rem;
+	}
+	border: 1px solid #000;
+	p {
+		font-size: 1.6rem;
+		color: #fff;
+	}
+}

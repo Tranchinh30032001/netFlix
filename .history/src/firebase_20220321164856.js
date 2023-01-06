@@ -1,0 +1,22 @@
+import firebase from "firebase/app";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { seedDatabase } from "./seed";
+
+const firebaseConfig = {
+	apiKey: "AIzaSyATf9zODcOCt6TjD_tqzxz81EdhSlzOPV4",
+	authDomain: "netflix-clone-8b3a7.firebaseapp.com",
+	projectId: "netflix-clone-8b3a7",
+	storageBucket: "netflix-clone-8b3a7.appspot.com",
+	messagingSenderId: "747610415757",
+	appId: "1:747610415757:web:0f8263adbf5e9e73c978c4",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+seedDatabase();
+
+export { db, auth };

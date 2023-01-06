@@ -1,0 +1,14 @@
+.feature {
+	position: absolute;
+	top: 50%;
+	width: 60rem;
+	height: 30rem;
+	text-align: left;
+	img {
+		object-fit: cover;
+	}
+	border: 1px solid #000;
+	p {
+		font-size: 1.6rem;
+	}
+}

@@ -1,0 +1,88 @@
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
+	&.active {
+		background-color: #0b0b0b;
+	}
+}
+.container {
+	padding: 0 5rem;
+	height: 7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.left {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.logo {
+		display: flex;
+		align-items: center;
+	}
+	img {
+		width: 18rem;
+		height: 4rem;
+		margin-right: 4rem;
+	}
+	.nav-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		li {
+			margin-right: 2rem;
+		}
+		a {
+			font-size: 1.6rem;
+			color: #fff;
+		}
+	}
+}
+.right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	img {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 100%;
+		object-fit: cover;
+		margin-left: 2rem;
+	}
+	.icon {
+		font-size: 2.4rem;
+		margin-left: 2rem;
+		cursor: pointer;
+	}
+	span {
+		margin-left: 2rem;
+		font-size: 1.6rem;
+	}
+	.profile {
+		&:hover {
+			.login {
+				display: block;
+			}
+		}
+	}
+	.login {
+		display: none;
+		position: absolute;
+		background-color: #0b0b0b;
+		padding: 1rem;
+		border-radius: 1rem;
+		text-align: left;
+		div {
+			margin-bottom: 0.6rem;
+		}
+		a {
+			font-size: 1.6rem;
+			color: #fff;
+		}
+	}
+}

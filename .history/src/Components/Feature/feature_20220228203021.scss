@@ -1,0 +1,30 @@
+.feature {
+	position: absolute;
+	top: 20%;
+	width: 60rem;
+	text-align: left;
+	img {
+		object-fit: cover;
+	}
+	border: 1px solid #000;
+	p {
+		font-size: 1.6rem;
+		color: #fff;
+	}
+	.list-btn {
+		display: flex;
+	}
+	.list-btn {
+		.icon {
+			font-size: 2.4rem;
+			cursor: pointer;
+			margin-right: 0.6rem;
+		}
+		.large {
+			font-size: 4rem;
+		}
+		.btn-feature {
+			margin-right: 2rem;
+		}
+	}
+}

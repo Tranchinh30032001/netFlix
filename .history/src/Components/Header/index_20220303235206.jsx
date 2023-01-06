@@ -1,0 +1,40 @@
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import * as SWITCH from "../../constants/routes";
+import {
+	Background,
+	Navbar,
+	Logo,
+	ButtonLink,
+	Content,
+	Title,
+	SubTitle,
+} from "./styles/header";
+
+function Header({ children, ...restProps }) {
+	return <Background>{children}</Background>;
+}
+
+Header.Navbar = ({ children, ...restProps }) => {
+	return <Navbar>{children}</Navbar>;
+};
+Header.Logo = ({ to, ...restProps }) => {
+	return (
+		<RouterLink to={SWITCH.Home}>
+			<Logo to={to} {...restProps} />
+		</RouterLink>
+	);
+};
+Header.ButtonLink = ({ children, ...restProps }) => {
+	return <ButtonLink to={SWITCH.SignIn}>{children}</ButtonLink>;
+};
+Header.Content = ({ children, ...restProps }) => {
+	return <Content>{children}</Content>;
+};
+Header.Title = ({ children }) => {
+	return <Title>{children}</Title>;
+};
+Header.SubTitle = ({ children }) => {
+	return <SubTitle>{children}</SubTitle>;
+};
+export default Header;
